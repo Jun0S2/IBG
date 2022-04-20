@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://database:3306/ibg?useUnicode=yes&characterEncoding=UTF-8
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: 유저이름
+    password: 비밀번호
+  jpa:
+    hibernate:
+      ddl-auto: update
+#      ddl-auto: create
+    properties:
+      hibernate:
+        #        show_sql: true
+        format_sql: true
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+server:
+  port: 7777
+  servlet:
+    context-path: /ibg
+  ssl:
+    key-store: classpath:keystore.p12
+    key-store-type: PKCS12
+    key-store-password: ssafyB101!
+
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+#    org.hibernate.type: trace
